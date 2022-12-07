@@ -4,7 +4,7 @@
     <section style="width: 50%; margin: 0 auto; transform: translateY(50%)">
         <h1>Ready to Play?</h1>
         <button>
-            <a href="{{ route('login') }}">LogIn</a>
+            <a href="{{ route('login') }}" style="color: #fff; text-decoration: none;">LogIn</a>
         </button>
         <br><br>
         <button>

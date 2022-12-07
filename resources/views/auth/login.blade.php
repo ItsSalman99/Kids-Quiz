@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div style="width: 50%; margin: 0 auto;">
+    <div style="width: 50%; margin: 0 auto; transform: translateY(50%)">
         @if ($errors->any())
             <div >
                 <div style="background-color: red; color: #fff">
@@ -21,6 +21,7 @@
 
             <div>
                 <h2>Login To Continue</h2>
+                <p></p>
             </div>
             <div style="margin-top: 40px">
                 <input type="email" placeholder="Email" name="email" required
