@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> {{ config('app.name') }} </title>
-
-    <link rel="stylesheet" href="{{ asset('assets/frontend/style.css') }}">
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> --}}
-</head>
+@include('backend.partials.head')
 
 <body>
-    <div id='quiz' class='quiz-container intro-hidden'>
-        @yield('content')
-    </div>
+
+    @yield('content')
+
 
     @include('sweetalert::alert')
+
+    <!-- jQuery-js include -->
+    <script src="{{ asset('assets/backend/assets/js/jquery-3.6.0.min.js') }}"></script>
+    <!-- Countdown-js include -->
+    <script src="{{ asset('assets/backend/assets/js/countdown.js') }}"></script>
+    <!-- Bootstrap-js include -->
+    <script src="{{ asset('assets/backend/assets/js/bootstrap.min.js') }}"></script>
+    <!-- jQuery-validate-js include -->
+    <script src="{{ asset('assets/backend/assets/js/jquery.validate.min.js') }}"></script>
+    <!-- Custom-js include -->
+    <script src="{{ asset('assets/backend/assets/js/script.js') }}"></script>
 
 </body>
 

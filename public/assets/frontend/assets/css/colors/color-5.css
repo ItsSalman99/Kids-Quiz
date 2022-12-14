@@ -1,0 +1,27 @@
+.wizard-content-1 .steps li.js-active.current .step-btn-icon-text .step-btn-text h2 {
+    color: #e53f51 !important;
+}
+
+
+.wizard-content-1 .steps .bg-shape,
+.step-inner-content .bg-shape,
+.wizard-inner-box .need-job-icon-text .need-job-text-inner .checkbox-circle-mark:after,
+.wizard-progress .progress .progress-bar, 
+.actions li,
+.details-form-area .wizard-document-upload .custom-file .icon-bg,
+.details-form-area .has-float-label label,
+.details-form-area .wizard-document-upload .custom-file .custom-file-label:after {
+    background-color: #e53f51 !important;
+}
+
+
+.wizard-content-1 .steps li.js-active.current .step-btn-icon-text .step-btn-icon:after,
+.wizard-inner-box .j-checkbox:checked ~ .need-job-text-inner .checkbox-circle-mark:before,
+.wizard-inner-box .j-checkbox:checked ~ .need-job-text-inner,
+.details-form-area .wizard-document-upload .custom-file .custom-file-label:after,
+.details-form-area .has-float-label .form-control:focus {
+    border-color: #e53f51 !important;
+}
+
+
+

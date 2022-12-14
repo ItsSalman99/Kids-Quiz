@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Alert;
 
 class RegisteredUserController extends Controller
 {
@@ -33,21 +34,27 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        // dd($request->all());
 
         $user = User::create([
-            'name' => $request->name,
+            'name' => $request->first_name . ' ' . $request->last_name,
             'email' => $request->email,
+            'phone' => $request->phone,
+            'country' => $request->country_list,
+            'city' => $request->city_list,
+            'address' => $request->address,
+            'gender' => $request->gender,
+            'profile_info' => $request->add_info,
+            'avatar' => $request->file_upload,
             'password' => Hash::make($request->password),
+            'user_type' => 3
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
+
+        toast("Kudos, Account has been created successfully!", "success");
 
         return redirect(RouteServiceProvider::HOME);
     }
