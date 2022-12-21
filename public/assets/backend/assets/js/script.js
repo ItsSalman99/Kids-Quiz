@@ -1,37 +1,37 @@
-$(function(){
-     // ========== Form-select-option ========== //
-  $(".step_1").on('click', function(){
-    $(".step_1").removeClass("active");
-    $(this).addClass("active");
-  });
-  $(".step_2").on('click', function(){
-    $(".step_2").removeClass("active");
-    $(this).addClass("active");
-  });
-  $(".step_3").on('click', function(){
-    $(".step_3").removeClass("active");
-    $(this).addClass("active");
-  });
-  $(".step_4").on('click', function(){
-    $(".step_4").removeClass("active");
-    $(this).addClass("active");
-  });
-  $(".step_5").on('click', function(){
-    $(".step_5").removeClass("active");
-    $(this).addClass("active");
-  });
+$(function () {
+    // ========== Form-select-option ========== //
+    $(".step_1").on('click', function () {
+        $(".step_1").removeClass("active");
+        $(this).addClass("active");
+    });
+    $(".step_2").on('click', function () {
+        $(".step_2").removeClass("active");
+        $(this).addClass("active");
+    });
+    $(".step_3").on('click', function () {
+        $(".step_3").removeClass("active");
+        $(this).addClass("active");
+    });
+    $(".step_4").on('click', function () {
+        $(".step_4").removeClass("active");
+        $(this).addClass("active");
+    });
+    $(".step_5").on('click', function () {
+        $(".step_5").removeClass("active");
+        $(this).addClass("active");
+    });
 
     // ================== CountDown function ================
-  $('.countdown_timer').each(function(){
-    $('[data-countdown]').each(function() {
-      var $this = $(this), finalDate = $(this).data('countdown');
-      $this.countdown(finalDate, function(event) {
-        var $this = $(this).html(event.strftime(''
-        + '<h3>%S</h3>'
-        + '<span class="text-uppercase">sec</span>'));
-      });
+    $('.countdown_timer').each(function () {
+        $('[data-countdown]').each(function () {
+            var $this = $(this), finalDate = $(this).data('countdown');
+            $this.countdown(finalDate, function (event) {
+                var $this = $(this).html(event.strftime(''
+                    + '<h3>%S</h3>'
+                    + '<span class="text-uppercase">sec</span>'));
+            });
+        });
     });
-  });
 
 });
 
@@ -70,10 +70,17 @@ function nextPrev(n) {
     // if you have reached the end of the form... :
     if (currentTab >= x.length) {
         //...the form gets submitted:
-        document.getElementById("wizard").submit();
+        // document.getElementById("wizard").submit();
+        var submit = document.getElementsByClassName('submitBTN')
+        submit.style.visibility = 'visible';
+        var nextlast = document.getElementsByClassName('nextlast');
+        nextlast.style.visibility = 'hidden';
+
         return false;
     }
     // Otherwise, display the correct tab:
+    console.log(currentTab);
+    console.log(n);
     showTab(currentTab);
 }
 

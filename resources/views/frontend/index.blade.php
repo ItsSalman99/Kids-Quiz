@@ -7,16 +7,32 @@
                 <span class="bg-shape"></span>
                 <ul class="tablist multisteps-form__progress">
                     <li class="multisteps-form__progress-btn js-active current">
-                        <div class="step-btn-icon-text">
-                            <span>1</span>
-                            <div class="step-btn-icon float-left position-relative">
-                                <img src="{{ asset('assets/frontend/assets/img/bt1.png') }}" alt="">
+                        <a href="{{ route('register') }}">
+                            <div class="step-btn-icon-text">
+                                <span>1</span>
+                                <div class="step-btn-icon float-left position-relative">
+                                    <img src="{{ asset('assets/frontend/assets/img/bt1.png') }}" alt="">
+                                </div>
+                                <div class="step-btn-text">
+                                    <h2 class="text-uppercase">Sign Up</h2>
+                                    <span class="text-capitalize">Create Account</span>
+                                </div>
                             </div>
-                            <div class="step-btn-text">
-                                <h2 class="text-uppercase">Sign Up</h2>
-                                <span class="text-capitalize">Create Account</span>
+                        </a>
+                    </li>
+                    <li class="multisteps-form__progress-btn js-active current">
+                        <a href="{{ route('login') }}">
+                            <div class="step-btn-icon-text">
+                                <span>1</span>
+                                <div class="step-btn-icon float-left position-relative">
+                                    <img src="{{ asset('assets/frontend/assets/img/bt2.png') }}" alt="">
+                                </div>
+                                <div class="step-btn-text">
+                                    <h2 class="text-uppercase">Sign In</h2>
+                                    <span class="text-capitalize">Sign in to your existing account</span>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </li>
                 </ul>
             </div>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\QuizResultController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -13,6 +14,10 @@ Route::post('quize/questions/store', [QuestionController::class, 'store'])->name
 
 Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
 Route::post('profile/update', [ProfileController::class, 'store'])->name('profile.store');
+
+
+Route::post('quiz/post', [QuizResultController::class, 'store'])->name('quizresult.store');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
