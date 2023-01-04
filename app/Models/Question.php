@@ -2,16 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
-    use HasFactory;
+    protected $fillable=[
+        'exam_id','question','right_answer'
+    ];
 
-    public function options()
+    public function exam()
     {
-        return $this->hasMany(QuestionOption::class);
+        return $this->belongsTo(Exam::class,'exam_id','id');
+    }
+
+    public function option()
+    {
+       return $this->hasMany(Option::class)->inRandomOrder();
     }
 
 }

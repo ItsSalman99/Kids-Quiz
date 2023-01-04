@@ -1,0 +1,13 @@
+    <script src="{{asset('backoffice/assets/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('backoffice/assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('backoffice/assets/plugins/simplebar/js/simplebar.min.js')}}"></script>
+    <script src="{{asset('backoffice/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>
+    <script src="{{asset('backoffice/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
+    <script src="{{asset('backoffice/assets/plugins/chartjs/js/Chart.min.js')}}"></script>
+    <script src="{{asset('backoffice/assets/plugins/chartjs/js/Chart.extension.js')}}"></script>
+    <script src="{{asset('backoffice/assets/plugins/sparkline-charts/jquery.sparkline.min.js')}}"></script>
+    <script src="{{asset('backoffice/assets/js/index2.js')}}"></script>
+    <script src="{{asset('backoffice/assets/js/toastr.min.js')}}"></script>
+    <script src="{{asset('backoffice/assets/js/sweetalert.min.js')}}"></script>
+    <script src="{{asset('backoffice/assets/js/app.js')}}"></script>
+    <script src="{{asset('backoffice/assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>

@@ -1,26 +1,34 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\QuestionController;
-use App\Http\Controllers\QuizResultController;
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+use App\Http\Controllers\Site\ExamCardController;
+use App\Http\Controllers\Site\LoginController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+    return redirect(route('site.login.create'));
+});
 
-Route::get('/', [HomeController::class, 'index']);
+//------------------ AUTH ROUTES -------------------//
+Route::get('/login', [LoginController::class, 'create'])->name('site.login.create');
+Route::post('/sitelogin', [LoginController::class, 'store'])->name('site.login.store');
+//------------------ AUTH ROUTES END -------------------//
 
-Route::get('quize/questions', [QuestionController::class, 'index'])->name('quizes.questions');
-Route::post('quize/questions/store', [QuestionController::class, 'store'])->name('quizes.questions.store');
+Route::group(['prefix' => 'site/exam'], function () {
 
-Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
-Route::post('profile/update', [ProfileController::class, 'store'])->name('profile.store');
-
-
-Route::post('quiz/post', [QuizResultController::class, 'store'])->name('quizresult.store');
+    Route::view('card', 'Site.Pages.index')->name('site.examcard');
+    Route::get('/examview/{id}', [ExamCardController::class, 'getExam'])->name('site.exam.view');
+});
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
+require "admin.php";
